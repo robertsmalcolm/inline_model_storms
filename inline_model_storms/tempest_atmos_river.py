@@ -109,8 +109,8 @@ class TempestExtremesAR(TempestExtremesAbstract):
             # no conflict with writing if postproc on the next step might be running)
             if dot_tracking_files:
                 for do_track_file in dot_tracking_files:
-                    ftimestamp_day = do_track_file.split(".")[1].split("-")[0]
-                    ftimestamp_endday = do_track_file.split(".")[1].split("-")[1]
+                    ftimestamp_day = os.path.basename(do_track_file).split(".")[1].split("-")[0]
+                    ftimestamp_endday = os.path.basename(do_track_file).split(".")[1].split("-")[1]
 
                     if self.inline_tracking == "True":
                         self.logger.debug(f"running inline {self.inline_tracking}")
